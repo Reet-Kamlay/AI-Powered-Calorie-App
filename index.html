@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calorie Detector</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Upload a food photo and get instant calorie and nutrition breakdown using AI.">
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-blue-100 min-h-screen flex flex-col font-sans">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 shadow-lg sticky top-0 z-50">
+    <h1 class="text-3xl md:text-4xl font-bold text-center tracking-wide">🍽️ Calorie Detector</h1>
+    <p class="text-center text-blue-200 text-sm mt-1">AI-powered nutrition analysis from your food photo</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <!-- Upload Section -->
+    <section class="mb-10">
+      <div class="bg-white shadow-xl rounded-2xl p-8 transition hover:shadow-2xl">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-800 text-center">📷 Upload Your Food Image</h2>
+        
+        <!-- Upload Area -->
+        <div id="uploadArea" class="upload-area cursor-pointer border-4 border-dashed border-gray-300 rounded-xl p-10 text-center transition hover:border-blue-500 hover:bg-blue-50">
+          <input type="file" id="imageInput" accept="image/*" class="hidden" capture="camera">
+          <p class="text-gray-600 mb-3">Drag and drop an image here<br>or click below to upload/take a photo</p>
+          <button id="uploadBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-300">📁 Select Image</button>
+        </div>
+
+        <!-- Preview -->
+        <div id="preview" class="mt-6 hidden">
+          <img id="imagePreview" class="max-w-full max-h-[400px] mx-auto rounded-xl shadow-md" alt="Uploaded food preview">
+        </div>
+
+        <!-- Loader -->
+        <div id="progress" class="mt-6 hidden text-center">
+          <p class="text-gray-700 text-sm mb-2">⏳ Analyzing your image... Please wait.</p>
+          <div class="loader"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Dynamic food cards go here -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4 mt-auto">
+    <p class="text-sm">&copy; 2025 Calorie Detector. Built with ❤️ using AI.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
